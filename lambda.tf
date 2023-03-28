@@ -86,7 +86,7 @@ resource "aws_iam_role_policy" "policy" {
 }
 resource "aws_lambda_function_event_invoke_config" "example" {
   count = var.create-event-invoke ? 1 : 0
-  function_name = aws_lambda_function.test_lambda[0].arn
+  function_name = var.lambda_arn
   destination_config {
     on_failure {
       destination = var.sns_arn

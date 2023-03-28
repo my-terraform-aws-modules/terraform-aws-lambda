@@ -49,6 +49,11 @@ variable "create-event-invoke" {
     type = bool
     default = false 
 }
+variable "lambda_arn" {
+    type = string
+    default = ""
+  
+}
 variable "sns_arn" {  
     type = string
     default = ""
