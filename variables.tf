@@ -19,6 +19,10 @@ variable "lambda_name" {
     type = string
     default = "demo-function" 
 }
+variable "package_filename" {
+  description = "The zipped package containing the lambda source code."
+  type        = string
+}
 variable "runtime" {
     type = string
     default = "python3.9"  
