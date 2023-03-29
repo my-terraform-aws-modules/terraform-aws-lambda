@@ -29,7 +29,7 @@ variable "runtime" {
 }
 variable "lambda_handler" {
     description = "give filename & function name which you have mentioned in the file"
-    default = "process_sqs.lambda_handler"
+    default = ""
    
 }
 variable"create_role"{
