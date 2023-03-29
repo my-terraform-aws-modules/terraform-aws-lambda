@@ -1,6 +1,6 @@
 variable "region" {
     type = string
-    default = "eu-west-2"  
+    default = "eu-west-1"  
 }
 variable "create-function" {
     type = bool
@@ -22,6 +22,7 @@ variable "lambda_name" {
 variable "package_filename" {
   description = "The zipped package containing the lambda source code."
   type        = string
+  default = "lambda_dynamo.zip"
 }
 variable "runtime" {
     type = string
@@ -29,7 +30,7 @@ variable "runtime" {
 }
 variable "lambda_handler" {
     description = "give filename & function name which you have mentioned in the file"
-    default = ""
+    default = "lambda_dynamo.lambda_handler"
    
 }
 variable"create_role"{
