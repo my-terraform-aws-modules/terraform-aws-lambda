@@ -79,6 +79,13 @@ resource "aws_iam_role_policy" "policy" {
         ],
         "Effect" : "Allow",
         "Resource" : "*"
+      },
+      {
+        "Action" : [
+          "states:*", 
+        ],
+        "Effect" : "Allow",
+        "Resource" : "*"
       }
     ]
   })
