@@ -46,6 +46,16 @@ variable "tags" {
   type        = map(string)
   default     = {}
 }
+variable "enable_lambda_trigger" {
+    type = bool
+    default = false
+  
+}
+variable "event_source_arn" {
+    type = string
+    default = ""
+  
+}
 variable "create-event-invoke" {
     type = bool
     default = false 
@@ -55,7 +65,11 @@ variable "lambda_arn" {
     default = ""
   
 }
-variable "sns_arn" {  
+variable "lambda_failure_destination_arn" {  
+    type = string
+    default = ""
+}
+variable "lambda_success_destination_arn" {  
     type = string
     default = ""
 }

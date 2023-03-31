@@ -91,16 +91,22 @@ resource "aws_iam_role_policy" "policy" {
   })
 
 }
+
+resource "aws_lambda_event_source_mapping" "Example" {
+  count = var.enable_lambda_trigger ? 1 : 0
+  event_source_arn = var.event_source_arn
+  function_name    = var.lambda_arn
+}
 resource "aws_lambda_function_event_invoke_config" "example" {
   count = var.create-event-invoke ? 1 : 0
   function_name = var.lambda_arn
   destination_config {
     on_failure {
-      destination = var.sns_arn
+      destination = var.lambda_failure_destination_arn
     }
 
     on_success {
-      destination = var.sns_arn
+      destination = var.lambda_success_destination_arn
     }
     }
 }
