@@ -17,7 +17,7 @@ resource "aws_lambda_function" "test_lambda" {
   tags = var.tags
 }
 resource "aws_iam_role" "lambda" {
-  count = var.create_role ? 1 : 0
+  #count = var.create_role ? 1 : 0
   #function_name = aws_lambda_function.test_lambda[0].arn
   name = "iam_for_lambda"
 
