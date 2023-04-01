@@ -38,16 +38,13 @@ variable "lambda_handler" {
     default = "lambda_dynamodb.lambda_handler"
    
 }
-variable"create_role"{
+variable"create_lambda_role"{
     description = "Determines whether role will be created or not"
     type = bool
     default = false
 }
-variable "create_basic_role" {
-    type = bool
-    default = false
-}
-variable "create_policy" {
+
+variable "create_lambda_policy" {
     type = bool
     default = false
   
