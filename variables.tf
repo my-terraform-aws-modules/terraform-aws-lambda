@@ -47,6 +47,11 @@ variable "create_basic_role" {
     type = bool
     default = false
 }
+variable "create_policy" {
+    type = bool
+    default = false
+  
+}
 variable "lambda_role" {
     description = "Give the name of the lambda role"
     type = string
