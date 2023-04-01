@@ -6,7 +6,7 @@ variable "region" {
 variable "create-function" {
     description = "Determines whether resources will be created or not"
     type = bool
-    default = true 
+    default = false 
 }
 variable "environment" {
   description = "The environment to deploy to."
@@ -35,7 +35,7 @@ variable "runtime" {
 variable "lambda_handler" {
     description = "give filename & function name which you have mentioned in the file"
     type = string
-    default = "lambda_dynamo.lambda_handler"
+    default = "lambda_dynamodb.lambda_handler"
    
 }
 variable"create_role"{

@@ -2,8 +2,8 @@
 /*
 data "archive_file" "lambda" {
   type        = "zip"
-  source_file = "${path.module}/python/lambda_dynamo/lambda_dynamodb.py"
-  output_path = "${path.module}/python/lambda_dynamo/lambda_dynamodb.zip"
+  source_file = "${path.module}/python/lambda/lambda_dynamodb.py"
+  output_path = "${path.module}/python/lambda/lambda_dynamodb.zip"
 }
 */
 resource "aws_lambda_function" "test_lambda" {
