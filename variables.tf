@@ -41,7 +41,7 @@ variable "lambda_handler" {
 variable"create_role"{
     description = "Determines whether role will be created or not"
     type = bool
-    default = true
+    default = false
 }
 variable "lambda_role" {
     description = "Give the name of the lambda role"
