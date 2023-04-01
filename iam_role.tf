@@ -21,7 +21,7 @@ EOF
 
 resource "aws_iam_role_policy" "policy" {
   name = "lambda_policyy"
-  role = aws_iam_role.iam_for_lambdaa.id
+  role = aws_iam_role.iam_for_lambdaa[0].id
 
   policy = jsonencode({
     "Version" : "2012-10-17",
