@@ -10,15 +10,15 @@ resource "aws_lambda_function" "test_lambda" {
   count = var.create-function ? 1 : 0
   function_name = "${var.environment}-${var.lambda_name}"
   filename      = var.package_filename #var.package_filename = data.archive_file.lambda.output_path
-  role          = var.create_role ? aws_iam_role.lambda.arn : var.lambda_role
+  role          = var.create_role ? aws_iam_role.lambda[0].arn : var.lambda_role
   handler       = var.lambda_handler
   source_code_hash = filebase64sha256(var.package_filename)#var.package_filename = data.archive_file.lambda.output_path
   runtime = var.runtime
   tags = var.tags
 }
 resource "aws_iam_role" "lambda" {
-  #count = var.create_role ? 1 : 0
-  #function_name = aws_lambda_function.test_lambda[0].arn
+  count = var.create_role ? 1 : 0
+  function_name = aws_lambda_function.test_lambda[0].arn
   name = "iam_for_lambda"
 
   assume_role_policy = <<EOF
