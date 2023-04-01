@@ -49,7 +49,7 @@ variable "create_lambda_policy" {
     default = false
   
 }
-variable "lambda_role" {
+variable "customized_lambda_role" {
     description = "Give the name of the lambda role"
     type = string
     default = ""
