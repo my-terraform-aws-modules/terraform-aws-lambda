@@ -1,5 +1,5 @@
 resource "aws_iam_role" "iam_for_lambda" {
-  count = create_basic_role ? 1 : 0
+  count = var.create_basic_role ? 1 : 0
   name = "iam_for_lambda"
 
   assume_role_policy = <<EOF
