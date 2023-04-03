@@ -90,6 +90,6 @@ variable "lambda_success_destination_arn" {
     default = ""
 }
 
-
+variable "create_lambda_permission_with_sns" {}
 
   

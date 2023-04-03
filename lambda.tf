@@ -35,4 +35,12 @@ resource "aws_lambda_function_event_invoke_config" "example" {
     }
   }
 }
+resource "aws_lambda_permission" "with_sns" {
+  count = var.create_lambda_permission_with_sns ? 1 : 0
+    statement_id = "AllowExecutionFromSNS"
+    action = "lambda:InvokeFunction"
+    function_name = var.lambda_arn
+    principal = "sns.amazonaws.com"
+    source_arn = var.event_source_arn
+}
 
