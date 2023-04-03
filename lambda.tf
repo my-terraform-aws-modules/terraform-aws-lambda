@@ -22,6 +22,14 @@ resource "aws_lambda_event_source_mapping" "Example" {
   event_source_arn = var.event_source_arn
   function_name    = var.lambda_arn
 }
+resource "aws_lambda_permission" "with_sns" {
+  count = var.create_lambda_permission_with_sns ? 1 : 0
+    statement_id = "AllowExecutionFromSNS"
+    action = "lambda:InvokeFunction"
+    function_name = var.lambda_arn
+    principal = "sns.amazonaws.com"
+    source_arn = var.event_source_arn
+}
 resource "aws_lambda_function_event_invoke_config" "example" {
   count = var.create-event-invoke ? 1 : 0
   function_name = var.lambda_arn
