@@ -33,6 +33,6 @@ resource "aws_lambda_function_event_invoke_config" "example" {
     on_success {
       destination = var.lambda_success_destination_arn
     }
-    }
+  }
 }
 
